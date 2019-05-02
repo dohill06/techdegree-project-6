@@ -4,6 +4,8 @@ const app = express();
 const data = require('./data.json');
 const projects = data.projects;
 
+app.use('/static', express.static('public'));
+
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
