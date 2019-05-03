@@ -17,7 +17,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/project/:id', (req, res, next) => {
-    if (req.params.id.match(/(?<!\d)[0-4]{1}(?!\d)/)) {
+    if (req.params.id.match(/(?<!\d)[0-4](?!\d)/)) {
         res.render('project', {project: projects[req.params.id]});
     } else {
         console.log('Page not found');
