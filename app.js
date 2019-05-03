@@ -21,7 +21,7 @@ app.get('/about', (req, res) => {
 });
 //set up dynamic 'project' route with error handling 
 app.get('/project/:id', (req, res, next) => {
-    if (req.params.id.match(/(?<!\d)[0-4](?!\d)/)) {
+    if (req.params.id.match(/(?<!\w)[0-4](?!\w)/)) {
         res.render('project', {
             project: projects[req.params.id]
         });
