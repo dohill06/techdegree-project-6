@@ -58,19 +58,23 @@ a:hover{
 
 .portfolio-me{
   padding: 20px;
-  background: #121213;
-  color: #fff;
+  /* changed sidebar background-color */
+  background: #3c3c4459;
+  /* changed all sidebar text color to match */
+  color: #555;
   box-shadow: none !important;
 }
 
   .portfolio-me p{
     font-size: 14px;
-    color: #999;
+  /* changed all sidebar text color to match */
+    color: #555;
   }
 
   .portfolio-me a{
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 600;
+  /* changed all sidebar text color to match */
     color: #555;
     font-size: 13px;
     letter-spacing: 2.5px;
@@ -98,6 +102,8 @@ a:hover{
  }
 
 .portfolio-intro{
+  /* changed background color to lighter gray */
+  background: #eaeaea;
   margin: 0;
   padding: 40px 50px 30px;
 }
@@ -108,6 +114,8 @@ a:hover{
 }
 
 .portfolio-index{
+  /* changed background color to lighter gray */
+  background: #eaeaea;
   margin: 0;
   padding: 10px 50px;
 }
