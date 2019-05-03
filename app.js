@@ -17,13 +17,13 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/project/:id', (req, res, next) => {
-    if (isNaN(req.params.id) || req.params.id >= projects.length) {
+    if (req.params.id.match(/(?<!\d)[0-4]{1}(?!\d)/)) {
+        res.render('project', {project: projects[req.params.id]});
+    } else {
         console.log('Page not found');
         const err = new Error('Not Found');
         err.status = 404;
         next(err);
-    } else {
-        res.render('project', {project: projects[req.params.id]});
     }
 });
 
