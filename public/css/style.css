@@ -156,3 +156,8 @@ a:hover{
 .portfolio-bio{
     line-height: 25px;
 }
+
+body {
+  /* changed body to lightest gray */
+  background: rgb(240, 237, 237);
+}
