@@ -17,7 +17,11 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/project/:id', (req, res) => {
-    res.render('project', {project: projects[req.params.id]});
+    if (isNaN(req.params.id) || req.params.id >= projects.length) {
+        return res.redirect('/');
+    } else {
+        res.render('project', {project: projects[req.params.id]});
+    }
 });
 
 app.use((req, res, next) => {
