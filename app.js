@@ -16,9 +16,11 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-app.get('/project/:id', (req, res) => {
+app.get('/project/:id', (req, res, next) => {
     if (isNaN(req.params.id) || req.params.id >= projects.length) {
-        return res.redirect('/');
+        const err = new Error('Not Found');
+        err.status = 404;
+        next(err);
     } else {
         res.render('project', {project: projects[req.params.id]});
     }
