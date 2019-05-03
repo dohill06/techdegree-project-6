@@ -18,6 +18,7 @@ app.get('/about', (req, res) => {
 
 app.get('/project/:id', (req, res, next) => {
     if (isNaN(req.params.id) || req.params.id >= projects.length) {
+        console.log('Page not found');
         const err = new Error('Not Found');
         err.status = 404;
         next(err);
@@ -27,15 +28,16 @@ app.get('/project/:id', (req, res, next) => {
 });
 
 app.use((req, res, next) => {
+    console.log('Page not found');
     const err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    next(err);   
 });
 
 app.use((err, req, res, next) => {
     res.locals.error = err;
     res.status(err.status);
-    res.render('error');
+    res.render('error');    
 });
 
 app.listen(3000, () => {
